@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter3 = ArrayAdapter.createFromResource(this,
                 R.array.band_tolerance_array, android.R.layout.simple_spinner_item);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        
+
         // Set it to the two first spinners
         band1Spinner.setAdapter(adapter1);
         band2Spinner.setAdapter(adapter1);
