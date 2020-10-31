@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "ResistorAssignment_Ronan_Finnegan_Duffy_S00187127"
