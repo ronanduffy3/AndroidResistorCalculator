@@ -2,13 +2,17 @@ package com.example.resistorassignment_ronan_finnegan_duffy_s00187127;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     // Get fields off view
-
+    private Spinner band1Spinner, band2Spinner, bandMultiplier, bandTolerance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Get the spinners accessible in the java code
-        Spinner band1Spinner = (Spinner) findViewById(R.id.band1Spinner);
-        Spinner band2Spinner = (Spinner) findViewById(R.id.band2Spinner);
-        Spinner bandMultiplier = (Spinner) findViewById(R.id.multiplierSpinner);
-        Spinner bandTolerance = (Spinner) findViewById(R.id.toleranceSpinner);
+        band1Spinner = findViewById(R.id.band1Spinner);
+        band2Spinner = findViewById(R.id.band2Spinner);
+        bandMultiplier = findViewById(R.id.multiplierSpinner);
+        bandTolerance = findViewById(R.id.toleranceSpinner);
 
         // Create an array adaptor for the first two spinners
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
@@ -42,5 +46,19 @@ public class MainActivity extends AppCompatActivity {
         // Set the two spinners accordingly
         bandMultiplier.setAdapter(adapter2);
         bandTolerance.setAdapter(adapter3);
+
+        band1Spinner.setOnItemSelectedListener(this);
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        System.out.println(text);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }
