@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     // Get fields off view
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static Spinner bandMultiplier;
     public static Spinner bandTolerance;
     public static ImageView ivBand1, ivBand2, ivBandMultiplier, ivBandTolerance;
+    public static TextView tvAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         ivBand2 = findViewById(R.id.bandTwo);
         ivBandMultiplier = findViewById(R.id.bandMultiplier);
         ivBandTolerance = findViewById(R.id.bandTolerance);
+
+        tvAnswer = findViewById(R.id.tvAnswer);
 
         // Create an array adaptor for the first two spinners
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
@@ -282,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
         int i = 0;
         int j = 0;
         double k = 0;
+        String tolerance = "";
         // Get the string of a band1Spinner and to run through an if/else to set the value of the band
         String item1 = band1Spinner.getSelectedItem().toString();
         String item2 = band2Spinner.getSelectedItem().toString();
@@ -389,14 +394,41 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        switch(item4){
+            case "Brown":
+                tolerance = "±1%";
+                break;
+            case "Red":
+                tolerance = "±2%";
+                break;
+            case "Green":
+                tolerance = "±0.5%";
+                break;
+            case "Blue":
+                tolerance = "±0.25%";
+                break;
+            case "Violet":
+                tolerance = "±0.1%";
+                break;
+            case "Gray":
+                tolerance = "±0.05%";
+                break;
+            case "Gold":
+                tolerance = "±5%";
+                break;
+            case "Silver":
+                tolerance = "±10%";
 
-
+        }
         String firstConcat = i + "" + j;
         double firstNumber = Double.parseDouble(firstConcat);
         double calculatedNumber = firstNumber * k;
 
         String calculatedAnswer = calculatedNumber + "";
-        System.out.println(calculatedAnswer);
+
+        String finalAnswer = calculatedAnswer + " " + tolerance;
+        tvAnswer.setText(finalAnswer);
+        System.out.println(finalAnswer);
     }
 
 }
