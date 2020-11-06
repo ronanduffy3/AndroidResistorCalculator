@@ -410,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
             case "Violet":
                 tolerance = "±0.1%";
                 break;
-            case "Gray":
+            case "Grey":
                 tolerance = "±0.05%";
                 break;
             case "Gold":
