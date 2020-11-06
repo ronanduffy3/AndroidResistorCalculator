@@ -431,5 +431,22 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(finalAnswer);
     }
 
+    public static void resetValues(View view){
+        int position = 0;
+        ivBand1.setImageDrawable(null);
+        ivBand1.setBackgroundResource(R.drawable.black);
+        ivBand2.setImageDrawable(null);
+        ivBand2.setBackgroundResource(R.drawable.black);
+        ivBandMultiplier.setImageDrawable(null);
+        ivBandMultiplier.setBackgroundResource(R.drawable.black);
+        ivBandTolerance.setImageDrawable(null);
+        ivBandTolerance.setBackgroundResource(R.drawable.brown);
+        band1Spinner.setSelection(position);
+        band2Spinner.setSelection(position);
+        bandTolerance.setSelection(position);
+        bandMultiplier.setSelection(position);
+        tvAnswer.setText("");
+
+    }
 }
 
