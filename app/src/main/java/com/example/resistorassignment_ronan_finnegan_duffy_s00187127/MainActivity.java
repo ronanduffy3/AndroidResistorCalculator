@@ -2,15 +2,12 @@ package com.example.resistorassignment_ronan_finnegan_duffy_s00187127;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     // Get fields off view
@@ -166,68 +163,118 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        bandMultiplier.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String text = parent.getItemAtPosition(position).toString();
+                switch (text) {
+                    case "Black":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.black);
+                        break;
+                    case "Brown":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.brown);
+                        break;
+                    case "Red":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.red);
+                        break;
+                    case "Orange":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.orange);
+                        break;
+                    case "Yellow":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.yellow);
+                        break;
+                    case "Green":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.green);
+                        break;
+                    case "Blue":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.blue);
+                        break;
+                    case "Violet":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.violet);
+                        break;
+                    case "Grey":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.grey);
+                        break;
+                    case "Silver":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.silver);
+                        break;
+                    case "Gold":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.gold);
+                        break;
+                    case "White":
+                        ivBandMultiplier.setImageDrawable(null);
+                        ivBandMultiplier.setBackgroundResource(R.drawable.white);
+                        break;
+                    default:
+                        System.out.println("Default");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        bandTolerance.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String text = parent.getItemAtPosition(position).toString();
+                switch (text) {
+                    case "Brown":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.brown);
+                        break;
+                    case "Red":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.red);
+                        break;
+                    case "Green":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.green);
+                        break;
+                    case "Blue":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.blue);
+                        break;
+                    case "Violet":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.violet);
+                        break;
+                    case "Grey":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.grey);
+                        break;
+                    case "Silver":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.silver);
+                        break;
+                    case "Gold":
+                        ivBandTolerance.setImageDrawable(null);
+                        ivBandTolerance.setBackgroundResource(R.drawable.gold);
+                        break;
+                    default:
+                        System.out.println("Default");
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
 
     }
-
-
-
-//    @Override
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        String text = parent.getItemAtPosition(position).toString();
-//        switch(text){
-//            case "Black":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.black);
-//                break;
-//            case "Brown":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.brown);
-//                break;
-//            case "Red":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.red);
-//                break;
-//            case "Orange":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.orange);
-//                break;
-//            case "Yellow":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.yellow);
-//                break;
-//            case "Green":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.green);
-//                break;
-//            case "Blue":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.blue);
-//                break;
-//            case "Violet":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.violet);
-//                break;
-//            case "Grey":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.grey);
-//                break;
-//            case "White":
-//                ivBand1.setImageDrawable(null);
-//                ivBand1.setBackgroundResource(R.drawable.white);
-//                break;
-//            default:
-//                System.out.println("Default");
-//        }
-//
-//        System.out.println(text);
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//
-//    }
 }
 
