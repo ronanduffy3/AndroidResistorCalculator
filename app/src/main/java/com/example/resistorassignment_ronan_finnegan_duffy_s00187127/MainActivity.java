@@ -426,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
 
         String calculatedAnswer = calculatedNumber + "";
 
-        String finalAnswer = calculatedAnswer + " " + tolerance;
+        String finalAnswer = calculatedAnswer + " Ω " + tolerance;
         tvAnswer.setText(finalAnswer);
         System.out.println(finalAnswer);
     }
