@@ -11,8 +11,11 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
     // Get fields off view
-    private Spinner band1Spinner, band2Spinner, bandMultiplier, bandTolerance;
-    private ImageView ivBand1, ivBand2, ivBandMultiplier, ivBandTolerance;
+    public static Spinner band1Spinner;
+    public static Spinner band2Spinner;
+    public static Spinner bandMultiplier;
+    public static Spinner bandTolerance;
+    public static ImageView ivBand1, ivBand2, ivBandMultiplier, ivBandTolerance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -273,8 +276,128 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
+    public static void calculateAnswer(View view){
+        int i = 0;
+        int j = 0;
+        double k = 0;
+        // Get the string of a band1Spinner and to run through an if/else to set the value of the band
+        String item1 = band1Spinner.getSelectedItem().toString();
+        String item2 = band2Spinner.getSelectedItem().toString();
+        String item3 = bandMultiplier.getSelectedItem().toString();
+        String item4 = bandTolerance.getSelectedItem().toString();
+
+        switch (item1){
+            case "Black":
+                i = 0;
+                break;
+            case "Brown":
+                i = 1;
+                break;
+            case "Red":
+                i = 2;
+                break;
+            case "Orange":
+                i = 3;
+                break;
+            case "Yellow":
+                i = 4;
+                break;
+            case "Green":
+                i = 5;
+                break;
+            case "Blue":
+                i = 6;
+                break;
+            case "Violet":
+                i =7;
+                break;
+            case "Grey":
+                i = 8;
+                break;
+            case "White":
+                i = 9;
+                break;
+        }
+
+        switch (item2){
+            case "Black":
+                j = 0;
+                break;
+            case "Brown":
+                j = 1;
+                break;
+            case "Red":
+                j = 2;
+                break;
+            case "Orange":
+                j = 3;
+                break;
+            case "Yellow":
+                j = 4;
+                break;
+            case "Green":
+                j = 5;
+                break;
+            case "Blue":
+                j = 6;
+                break;
+            case "Violet":
+                j =7;
+                break;
+            case "Grey":
+                j = 8;
+                break;
+            case "White":
+                j = 9;
+                break;
+        }
+
+        switch (item3){
+            case "Black":
+                k=1;
+                break;
+            case "Brown":
+                k=10;
+                break;
+            case "Red":
+                k=100;
+                break;
+            case "Orange":
+                k=1000;
+                break;
+            case "Yellow":
+                k=10000;
+                break;
+            case "Green":
+                k=100000;
+                break;
+            case "Blue":
+                k=1000000;
+            case "Grey":
+                k=10000000;
+                break;
+            case "White":
+                k=100000000;
+                break;
+            case "Gold":
+                k=0.1;
+                break;
+            case "Silver":
+                k=0.01;
+                break;
+        }
+
+
+
+        String firstConcat = i + "" + j;
+        double firstNumber = Double.parseDouble(firstConcat);
+        double calculatedNumber = firstNumber * k;
+
+        String calculatedAnswer = calculatedNumber + "";
+        System.out.println(calculatedAnswer);
+    }
+
 }
 
